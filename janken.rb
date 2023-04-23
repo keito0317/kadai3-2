@@ -27,12 +27,10 @@ def janken
   if @playerhand == @program_hand
     puts "あいこで"
     return true
-  
   elsif (@player_hand == 0 && @program_hand == 1) || (@player_hand == 2) || (@player_hand == 2 && @program_hand == 0)
     puts "あなたの勝ちです"
     @more_game = "あなたの勝ちです"
     return false
-    
   else
     puts "あなたの負けです"
     return false
@@ -48,10 +46,8 @@ def finger_point
   program_direction = rand(4)
   if player_direction >= 4
     puts "入力内容が無効です"
-  
   else
     puts "ホイ"
-  
   end
     puts "------------------"
   
