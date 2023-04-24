@@ -1,5 +1,4 @@
 class Game
-  
 puts "じゃんけん..."
 
 def janken
@@ -27,18 +26,23 @@ def janken
   if @playerhand == @program_hand
     puts "あいこで"
     return true
-  elsif (@player_hand == 0 && @program_hand == 1) || (@player_hand == 2) || (@player_hand == 2 && @program_hand == 0)
+  elsif (@player_hand == 0 && @program_hand == 1) || (@player_hand == 1 && @program_hand == 2) || (@player_hand == 2 && @program_hand == 0)
     puts "あなたの勝ちです"
-    @more_game = "あなたの勝ちです"
     return false
-  else
+  else 
     puts "あなたの負けです"
     return false
-  
-  end
-  
+end
+
+end
+
+game = Game.new
+next_game = true
+while next_game
+  next_game = janken
 end
   
+
 def finger_point
   puts "あっち向いて..."
   puts "0(上)1(右)2(下)3(左)"
@@ -73,7 +77,6 @@ def finger_point
   end
   
 end
-
 end
 
 game = Game.new
