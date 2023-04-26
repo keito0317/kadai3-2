@@ -3,7 +3,6 @@ puts "じゃんけん..."
 
 def janken
   puts "0(グー)1(チョキ)2(パー)3(戦わない)"
-  
    player_hand = gets.to_i
    program_hand = rand(3)
    if player_hand > 4
@@ -17,11 +16,9 @@ def janken
   @player_hand = player_hand
   @program_hand = program_hand
   puts "---------------------"
-  
   jankens = ["グー","チョキ","パー"]
   puts "あなた : #{jankens[@player_hand]}を出しました"
   puts "相手 : #{jankens[@program_hand]}を出しました"
-  
   
   if @player_hand == @program_hand
     puts "あいこで"
@@ -35,7 +32,6 @@ def janken
     @more_game = "あなたの負けです"
     return false
 end
-
 end
   
 
@@ -50,8 +46,6 @@ def finger_point
     puts "ホイ"
   end
     puts "------------------"
-  
-  
   directions = ["上","右","下","左"]
   puts "あなた : #{directions[player_direction]}"
   puts "相手 : #{directions[program_direction]}"
@@ -70,14 +64,11 @@ def finger_point
       puts "勝敗が決まりません"
       return true
     end
-   
-  end
-
+ end
 end
 
 game = Game.new
 next_game = true
-
 while next_game
   result = game.janken
   if result
