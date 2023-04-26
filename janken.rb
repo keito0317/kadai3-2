@@ -28,9 +28,11 @@ def janken
     return true
   elsif (@player_hand == 0 && @program_hand == 1) || (@player_hand == 1 && @program_hand == 2) || (@player_hand == 2 && @program_hand == 0)
     puts "あなたの勝ちです"
+    @more_game = "あなたの勝ちです"
     return false
   else 
     puts "あなたの負けです"
+    @more_game = "あなたの負けです"
     return false
 end
 
@@ -55,22 +57,22 @@ def finger_point
   puts "相手 : #{directions[program_direction]}"
   
   
-  if player_direction == program_direction
-    case @more_game
-    when "あなたの勝ちです"
-      puts "あなたの勝ちです"
-      return false
-    when "あなたの負けです"
-      puts "あなたの負けです"
-      return false
+ if player_direction == program_direction
+      case @more_game
+      when "あなたの勝ちです"
+        puts "あなたの勝ちです"
+        return false
+      when "あなたの負けです"
+        puts "あなたの負けです"
+        return false
+      end
+    else
+      puts "勝敗が決まりません"
+      return true
     end
-    
-  else
-    puts "勝敗が決まりません"
-    return true
+   
   end
-  
-end
+
 end
 
 game = Game.new
